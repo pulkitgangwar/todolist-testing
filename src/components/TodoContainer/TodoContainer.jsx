@@ -35,7 +35,6 @@ const TodoContainer = () => {
       return singleTodo;
     });
 
-
     // const todoObj = {
     //   id: todo.id,
     //   text: todo.text,
@@ -46,12 +45,18 @@ const TodoContainer = () => {
 
   return (
     <div className="todocontainer">
-      <AddTodoForm addTodo={addTodo} />
-      <Todos
-        todos={todos}
-        removeTodo={removeTodo}
-        saveEditTodo={saveEditTodo}
-      />
+      <div className="todocontainer__wrapper">
+        <div className="todocontainer__form">
+          <AddTodoForm addTodo={addTodo} />
+        </div>
+        <div className="todocontainer__todos">
+          <Todos
+            todos={todos}
+            removeTodo={removeTodo}
+            saveEditTodo={saveEditTodo}
+          />
+        </div>
+      </div>
     </div>
   );
 };
