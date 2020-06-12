@@ -24,10 +24,34 @@ const TodoContainer = () => {
     setTodos(filteredTodoArr);
   };
 
+  const saveEditTodo = (todo) => {
+    const EditedTodoArr = [...todos].map((singleTodo) => {
+      if (singleTodo.id.toString() === todo.id.toString()) {
+        return {
+          id: todo.id,
+          text: todo.text,
+        };
+      }
+      return singleTodo;
+    });
+
+
+    // const todoObj = {
+    //   id: todo.id,
+    //   text: todo.text,
+    // };
+
+    setTodos([...EditedTodoArr]);
+  };
+
   return (
     <div className="todocontainer">
       <AddTodoForm addTodo={addTodo} />
-      <Todos todos={todos} removeTodo={removeTodo} />
+      <Todos
+        todos={todos}
+        removeTodo={removeTodo}
+        saveEditTodo={saveEditTodo}
+      />
     </div>
   );
 };
