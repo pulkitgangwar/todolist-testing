@@ -21,7 +21,7 @@ const EditTodo = ({ todo, saveEditTodo, toggleEditState }) => {
   };
 
   return (
-    <form className="edittodo" onSubmit={handleSubmit}>
+    <form className="edittodo" onSubmit={handleSubmit} data-testid="edittodo">
       <input
         type="text"
         className="edittodo__input edittodo__todo"

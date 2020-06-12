@@ -20,7 +20,7 @@ const Todo = ({ todo, removeTodo, saveEditTodo }) => {
 
   if (isEditing) {
     return (
-      <div className="todo">
+      <div className="todo" data-testid="todo">
         <EditTodo
           todo={todo}
           saveEditTodo={saveEditTodo}
@@ -31,7 +31,7 @@ const Todo = ({ todo, removeTodo, saveEditTodo }) => {
   }
 
   return (
-    <div className="todo" id={id}>
+    <div className="todo" id={id} data-testid="todo">
       <div className="todo__text__wrapper">
         <h1 className="todo__text">{text}</h1>
       </div>
