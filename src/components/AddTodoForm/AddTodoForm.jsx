@@ -11,6 +11,7 @@ const AddTodoForm = ({ addTodo }) => {
     }
 
     addTodo(value);
+    setValue("");
   };
 
   return (
