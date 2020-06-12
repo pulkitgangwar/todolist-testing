@@ -1,0 +1,16 @@
+.btn {
+  &,
+  &:visited,
+  &:link {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: inherit;
+    padding: 1rem 2rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+}
