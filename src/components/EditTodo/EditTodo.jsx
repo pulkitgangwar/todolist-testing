@@ -9,7 +9,6 @@ const EditTodo = ({ todo, saveEditTodo, toggleEditState }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
 
     const newTodoObj = {
       text: value,
@@ -27,6 +26,7 @@ const EditTodo = ({ todo, saveEditTodo, toggleEditState }) => {
         className="edittodo__input edittodo__todo"
         value={value}
         onChange={handleChange}
+        data-testid="edittodo__todo"
       />
     </form>
   );
