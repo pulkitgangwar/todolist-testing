@@ -15,7 +15,7 @@ const Todos = ({ todos, toggleEditState, saveEditTodo, removeTodo }) => {
               removeTodo={removeTodo}
             />
           ))
-        : "Please Enter a todo"}
+        : <h1 className="todos__placeholder">Please enter a todo</h1>}
     </div>
   );
 };
