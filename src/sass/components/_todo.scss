@@ -1,0 +1,25 @@
+.todo {
+  width: 100%;
+  min-height: 10vh;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 0.5rem solid black;
+
+  &__text {
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 2rem;
+
+    &__wrapper {
+      width: 60%;
+    }
+  }
+
+  &__cta {
+    flex: 1;
+    text-align: right;
+  }
+}
