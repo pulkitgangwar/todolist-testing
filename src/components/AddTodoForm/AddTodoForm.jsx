@@ -15,7 +15,11 @@ const AddTodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form className="addtodoform" onSubmit={handleSubmit}>
+    <form
+      data-testid="addtodoform"
+      className="addtodoform"
+      onSubmit={handleSubmit}
+    >
       <input
         className="addtodoform__input addtodoform__input--todo"
         type="text"
