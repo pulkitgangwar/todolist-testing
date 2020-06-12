@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // importing components
 import Todos from "../Todos/Todos";
@@ -7,13 +7,25 @@ import AddTodoForm from "../AddTodoForm/AddTodoForm";
 const TodoContainer = () => {
   const [todos, setTodos] = useState([]);
 
+  useEffect(() => {
+    if (!localStorage.getItem("todos")) {
+      localStorage.setItem("todos", JSON.stringify([]));
+      return;
+    }
+
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }, []);
+
   const addTodo = (todo) => {
     const todoObj = {
       text: todo,
       id: Math.random() * 100,
     };
 
-    setTodos([...todos, todoObj]);
+    const newTodosArr = [...todos, todoObj];
+
+    setTodos([...newTodosArr]);
+    localStorage.setItem("todos", JSON.stringify([...newTodosArr]));
   };
 
   const removeTodo = (id) => {
@@ -21,7 +33,8 @@ const TodoContainer = () => {
       (todo) => todo.id.toString() !== id
     );
 
-    setTodos(filteredTodoArr);
+    setTodos([...filteredTodoArr]);
+    localStorage.setItem("todos", JSON.stringify([...filteredTodoArr]));
   };
 
   const saveEditTodo = (todo) => {
@@ -41,6 +54,7 @@ const TodoContainer = () => {
     // };
 
     setTodos([...EditedTodoArr]);
+    localStorage.setItem("todos", JSON.stringify([...EditedTodoArr]));
   };
 
   return (
