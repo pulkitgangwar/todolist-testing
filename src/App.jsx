@@ -4,6 +4,10 @@ import React from "react";
 import TodoContainer from "./components/TodoContainer/TodoContainer";
 
 const App = () => {
+  console.log(
+    "%c This project was made for practising react-testing-library and git",
+    "color:red;font-size:1rem;"
+  );
   return (
     <div>
       <TodoContainer />
