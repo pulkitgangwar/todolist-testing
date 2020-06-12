@@ -20,7 +20,7 @@ const Todo = ({ todo, removeTodo, saveEditTodo }) => {
 
   if (isEditing) {
     return (
-      <div className="todo__edit">
+      <div className="todo">
         <EditTodo
           todo={todo}
           saveEditTodo={saveEditTodo}
