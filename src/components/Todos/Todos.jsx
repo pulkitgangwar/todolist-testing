@@ -3,11 +3,11 @@ import React from "react";
 // importing components
 import Todo from "../Todo/Todo";
 
-const Todos = ({ todos }) => {
+const Todos = ({ todos,removeTodo }) => {
   return (
     <div className="todos">
       {todos.length
-        ? todos.map((todo) => <Todo todo={todo} key={todo.id} />)
+        ? todos.map((todo) => <Todo todo={todo} key={todo.id} removeTodo={removeTodo} />)
         : "Please Enter a todo"}
     </div>
   );
