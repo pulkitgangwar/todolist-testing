@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddTodoForm = () => {
+const AddTodoForm = ({ addTodo }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -10,7 +10,7 @@ const AddTodoForm = () => {
       return;
     }
 
-    console.log(value);
+    addTodo(value);
   };
 
   return (
